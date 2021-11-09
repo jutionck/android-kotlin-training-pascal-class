@@ -1,46 +1,54 @@
 package com.example.pascalandroid
 
+import android.annotation.SuppressLint
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.inputmethod.InputMethodManager
+import android.widget.TextView
+import com.google.android.material.button.MaterialButton
+import com.google.android.material.textfield.TextInputEditText
 
 class MainActivity : AppCompatActivity() {
-    // Lifecycle
+
+    private lateinit var txtInputName: TextInputEditText
+    private lateinit var tvHelloName: TextView
+    private lateinit var btnGreeting: MaterialButton
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        btnGreeting = findViewById(R.id.btn_greeting)
+        btnGreeting.setOnClickListener { getNameFromInput() }
 
-        Log.i("test", "onCreate() initiated moving onStart()")
+        txtInputName = findViewById(R.id.txt_input_name)
+        tvHelloName = findViewById(R.id.tv_hello_name)
     }
 
-    // override all method
-    override fun onStart() {
-        super.onStart()
-        Log.i("test", "onStart() initiated moving onResume()")
+    @SuppressLint("SetTextI18n")
+    private fun getNameFromInput() {
+        val getName = txtInputName.text
+        Log.i("test", "Print getName $getName")
+
+        val messageGreeting = listOf<String>("Have nice day", "Never give up", "Keep working hard", "Keep your study")
+        val index = (0..3).random()
+        val currentMessageGreeting = messageGreeting[index]
+
+        if (getName.toString() == "") {
+            tvHelloName.text = "Make sure to enter your name"
+        } else {
+            // update textView
+            tvHelloName.text = "Hello $getName! $currentMessageGreeting"
+        }
+        // clear input text with setText
+        txtInputName.setText("")
+
+        hideKeyboard()
     }
 
-    override fun onResume() {
-        super.onResume()
-        Log.i("test", "onResume() waiting for onPause()")
-    }
-
-    override fun onPause() {
-        super.onPause()
-        Log.i("test", "onPause() waiting for onStop() or onResume()")
-    }
-
-    override fun onStop() {
-        super.onStop()
-        Log.i("test", "onStop() waiting for onDestroy() or onRestart()")
-    }
-
-    override fun onRestart() {
-        super.onRestart()
-        Log.i("test", "onRestart() initiated moving to onStart()")
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        Log.i("test", "onDestroy() initiated...the app has been killed...")
+    private fun hideKeyboard() {
+        val inputMethodService = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        inputMethodService.hideSoftInputFromWindow(txtInputName.windowToken, 0)
     }
 }
