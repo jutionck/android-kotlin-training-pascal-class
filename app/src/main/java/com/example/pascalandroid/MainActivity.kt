@@ -1,32 +1,31 @@
 package com.example.pascalandroid
 
+import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.TextView
 import com.google.android.material.button.MaterialButton
+import com.google.android.material.textfield.TextInputEditText
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var count: TextView
+    private lateinit var txtInputName: TextInputEditText
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val btnIncrement: MaterialButton = findViewById(R.id.btn_increment)
-        val btnDecrement: MaterialButton = findViewById(R.id.btn_decrement)
-        btnIncrement.setOnClickListener { increment() }
-        btnDecrement.setOnClickListener { decrement() }
-        count = findViewById(R.id.tv_number_count)
+        val btnGreeting: MaterialButton = findViewById(R.id.btn_greeting)
+        btnGreeting.setOnClickListener { sendData() }
+
+        txtInputName = findViewById(R.id.txt_input_name)
     }
 
-    private fun increment() {
-        val currentNumber = count.text.toString().toInt()
-        count.text = (currentNumber + 1).toString()
-    }
-
-    private fun decrement() {
-        val currentNumber = count.text.toString().toInt()
-        count.text = (currentNumber - 1).toString()
+    private fun sendData() {
+        val intent =  Intent(this@MainActivity, SecondActivity::class.java)
+        val sendName = txtInputName.text
+        txtInputName.text = sendName
+        intent.putExtra(SecondActivity.GET_NAME, txtInputName.text.toString())
+        startActivity(intent)
     }
 }
