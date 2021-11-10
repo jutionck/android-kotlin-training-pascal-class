@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">Pascal</string>
     <string name="text_hai">Hai</string>
+    <string name="hello_name">Hello Name</string>
+    <string name="btn_greeting">GREETING</string>
+    <string name="txt_input_your_name">Your Name</string>
+    <string name="icon_greeting">Icon Greeting</string>
 </resources>
