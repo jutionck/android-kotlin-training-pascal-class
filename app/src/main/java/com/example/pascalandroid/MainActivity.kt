@@ -7,6 +7,9 @@ import android.os.Bundle
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import kotlinx.android.synthetic.main.activity_main.*
+import android.widget.Toast
+import java.lang.NumberFormatException
+
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
@@ -35,17 +38,24 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     override fun onClick(v: View?) {
         when (v) {
             btn_greeting -> {
-                val getNameFromInput = txt_input_name.text
-                val number = listOf<String>("Have nice day", "Never give up", "Keep working hard", "Keep your study")
-                val index = (0..3).random()
-                val getRandomElement = number[index]
-                if (getNameFromInput.toString() == "") {
-                    tv_hello_name.text = "Make sure to enter your name"
-                } else {
-                    tv_hello_name.text = "Hello $getNameFromInput! $getRandomElement"
+                val number: Int = txt_input_name.text.toString().toInt()
+                if (number == 0) {
+                    Toast.makeText(this, "Can't input zero number", Toast.LENGTH_SHORT)
+                        .show()
+                    return
                 }
+                val motivateMessage = listOf<String>(
+                    "Have nice day",
+                    "Never give up",
+                    "Keep working hard",
+                    "Keep your study"
+                )
+                val index = (0..3).random()
+                val getRandomElement = motivateMessage[index]
+                tv_hello_name.text = "Hello $number! $getRandomElement"
                 hideKeyboard()
                 txt_input_name.setText("")
+
             }
         }
     }
