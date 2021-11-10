@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="20dp">
+    android:layout_margin="20dp"
+    tools:context=".MainActivity">
 
 
     <ImageView
@@ -35,6 +36,8 @@
             android:id="@+id/txt_input_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:lines="1"
             />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -46,7 +49,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:backgroundTint="@color/primaryColor"
-        android:onClick="btnGreetingPress"
         android:text="@string/btn_greeting"
         app:cornerRadius="10dp"
         app:layout_constraintEnd_toEndOf="parent"
