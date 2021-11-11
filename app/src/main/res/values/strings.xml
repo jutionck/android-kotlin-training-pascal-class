@@ -15,4 +15,6 @@
     <string name="txt_increment">+</string>
     <string name="txt_decrement">-</string>
     <string name="txt_counter_current">0</string>
+    <string name="fragment_counter">Counter</string>
+    <string name="fragment_counter_show">Counter Show</string>
 </resources>

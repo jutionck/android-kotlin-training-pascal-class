@@ -5,8 +5,8 @@
     android:id="@+id/frameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment.CounterFragment"
-    android:background="@android:color/holo_orange_light">
+    android:background="@color/white"
+    tools:context=".fragment.CounterFragment">
 
     <LinearLayout
         android:layout_width="match_parent"

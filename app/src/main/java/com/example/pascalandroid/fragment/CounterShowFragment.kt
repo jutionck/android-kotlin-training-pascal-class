@@ -11,7 +11,7 @@ import kotlinx.android.synthetic.main.fragment_counter_show.*
 
 class CounterShowFragment : Fragment() {
 
-    private var counter = 0;
+    var counter = 0;
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

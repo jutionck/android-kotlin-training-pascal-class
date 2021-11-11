@@ -15,7 +15,6 @@ import kotlinx.android.synthetic.main.fragment_counter.view.*
 class CounterFragment : Fragment(), View.OnClickListener {
 
     private lateinit var counterHandler: CounterHandler
-    private var counter = 0;
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,14 +35,10 @@ class CounterFragment : Fragment(), View.OnClickListener {
     override fun onClick(v: View?) {
         when(v) {
             btn_increase -> {
-                Log.i("test", "Increase Button pressed")
-                counter++
-                counterHandler.notifyShowCounter(counter)
+                counterHandler.notifyIncrease()
             }
             btn_decrease -> {
-                Log.i("test", "Decrease Button pressed")
-                counter--
-                counterHandler.notifyShowCounter(counter)
+                counterHandler.notifyDecrease()
             }
         }
     }
