@@ -12,4 +12,7 @@
     <string name="tic_tac_toe">Tic Tac Toe</string>
     <string name="player_turn">Player Turn</string>
     <string name="btn_quit">QUIT</string>
+    <string name="txt_increment">+</string>
+    <string name="txt_decrement">-</string>
+    <string name="txt_counter_current">0</string>
 </resources>
