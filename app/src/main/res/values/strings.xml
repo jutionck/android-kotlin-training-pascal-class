@@ -3,7 +3,13 @@
     <string name="text_hai">Hai</string>
     <string name="hello_name">Hello Name</string>
     <string name="btn_greeting">GREETING</string>
+    <string name="btn_play">PLAY</string>
     <string name="btn_back">BACK</string>
     <string name="txt_input_your_name">Your Name</string>
+    <string name="txt_input_player_1_name">Player 1</string>
+    <string name="txt_input_player_2_name">Player 2</string>
     <string name="icon_greeting">Icon Greeting</string>
+    <string name="tic_tac_toe">Tic Tac Toe</string>
+    <string name="player_turn">Player Turn</string>
+    <string name="btn_quit">QUIT</string>
 </resources>

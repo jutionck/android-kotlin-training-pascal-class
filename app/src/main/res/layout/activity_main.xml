@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true"
     tools:context=".MainActivity">
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -19,13 +19,13 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@android:drawable/stat_notify_chat" />
+            android:src="@drawable/ic_baseline_videogame_asset_24" />
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/txt_input_name_field"
+            android:id="@+id/txt_input_player_1_field"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/txt_input_your_name"
+            android:hint="@string/txt_input_player_1_name"
             android:layout_marginTop="56dp"
             android:ems="10"
             android:layout_marginStart="32dp"
@@ -37,39 +37,62 @@
             app:layout_constraintTop_toBottomOf="@+id/imageView">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/txt_input_name"
+                android:id="@+id/txt_input_player_1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:maxLines="1"
-                android:lines="1"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/txt_input_player_2_field"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/txt_input_player_2_name"
+            android:ems="10"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_input_player_1_field">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txt_input_player_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 />
 
         </com.google.android.material.textfield.TextInputLayout>
 
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_greeting"
+            android:id="@+id/btn_play"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:backgroundTint="@color/primaryColor"
-            android:text="@string/btn_greeting"
+            android:text="@string/btn_play"
             app:cornerRadius="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txt_input_name_field" />
+            app:layout_constraintTop_toBottomOf="@+id/txt_input_player_2_field" />
 
-        <Button
-            android:id="@+id/btn_implicit"
-            style="@style/Widget.MaterialComponents.Button.TextButton"
+        <TextView
+            android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="80dp"
-            android:text="Implicit"
+            android:layout_marginTop="200dp"
+            android:layout_marginBottom="104dp"
+            android:text="@string/tic_tac_toe"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_greeting" />
+            app:layout_constraintTop_toBottomOf="@+id/btn_play"
+        />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

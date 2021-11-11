@@ -16,22 +16,14 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        btn_greeting.setOnClickListener(this)
-        btn_implicit.setOnClickListener(this)
+        btn_play.setOnClickListener(this)
     }
 
-    @SuppressLint("ServiceCast")
-    private fun hideKeyboard() {
-        val inputMethodService =
-            getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-        inputMethodService.hideSoftInputFromWindow(txt_input_name.windowToken, 0)
-    }
 
     @SuppressLint("SetTextI18n")
     override fun onClick(v: View?) {
         when (v) {
-            btn_greeting -> setIntent()
-            btn_implicit -> setIntent("implicit")
+            btn_play -> setIntent()
         }
     }
 
@@ -39,10 +31,11 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         when(typeOfIntent) {
             "explicit" -> {
                 val intent = Intent(this@MainActivity, SecondActivity::class.java)
-                val message = sendMessage()
-                intent.putExtra(SecondActivity.GET_NAME, message)
+                val playerOne = txt_input_player_1.text.toString()
+                val playerTwo = txt_input_player_2.text.toString()
+                intent.putExtra(SecondActivity.PLAYER_ONE, playerOne)
+                intent.putExtra(SecondActivity.PLAYER_TWO, playerTwo)
                 startActivity(intent)
-                txt_input_name.setText("")
             }
             "implicit" -> {
                 val imp = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.enigmacamp.com/"))
@@ -50,18 +43,5 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             }
         }
 
-    }
-
-    private fun sendMessage(): String {
-        val getName = txt_input_name.text.toString()
-        val motivateMessage = listOf<String>(
-            "Have nice day",
-            "Never give up",
-            "Keep working hard",
-            "Keep your study"
-        )
-        val index = (0..3).random()
-        val getRandomElement = motivateMessage[index]
-        return "$getName! \n$getRandomElement"
     }
 }
