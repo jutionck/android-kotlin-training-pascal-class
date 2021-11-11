@@ -8,17 +8,18 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.pascalandroid.MainActivity
 import com.example.pascalandroid.R
+import com.example.pascalandroid.contoller.CounterHandler
 import kotlinx.android.synthetic.main.fragment_counter.*
 import kotlinx.android.synthetic.main.fragment_counter.view.*
 
 class CounterFragment : Fragment(), View.OnClickListener {
 
-    // ketika melakukan komunikasi yang langsung memanggil activity (tidak di rekomendasikan)
-    private lateinit var mainActivity: MainActivity
+    private lateinit var counterHandler: CounterHandler
+    private var counter = 0;
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        mainActivity = activity as MainActivity
+        counterHandler = activity as CounterHandler
     }
 
     override fun onCreateView(
@@ -36,11 +37,13 @@ class CounterFragment : Fragment(), View.OnClickListener {
         when(v) {
             btn_increase -> {
                 Log.i("test", "Increase Button pressed")
-                mainActivity.notifyIncrease()
+                counter++
+                counterHandler.notifyShowCounter(counter)
             }
             btn_decrease -> {
                 Log.i("test", "Decrease Button pressed")
-                mainActivity.notifyDecrease()
+                counter--
+                counterHandler.notifyShowCounter(counter)
             }
         }
     }
