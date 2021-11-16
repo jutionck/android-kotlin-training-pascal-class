@@ -8,12 +8,21 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_pascal_android_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.MaterialComponents">
+        android:theme="@style/Theme.PascalAndroid">
         <activity
-            android:name=".SecondActivity"
+            android:name=".screen.HomeActivity"
             android:exported="true" />
         <activity
-            android:name=".MainActivity"
+            android:name=".screen.RegisterActivity"
+            android:exported="true" />
+        <activity
+            android:name=".screen.LoginActivity"
+            android:exported="true" />
+        <activity
+            android:name=".screen.NextActivity"
+            android:exported="true" />
+        <activity
+            android:name=".screen.WelcomeActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
