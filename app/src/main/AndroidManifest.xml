@@ -10,19 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PascalAndroid">
         <activity
-            android:name=".screen.HomeActivity"
-            android:exported="true" />
-        <activity
-            android:name=".screen.RegisterActivity"
-            android:exported="true" />
-        <activity
-            android:name=".screen.LoginActivity"
-            android:exported="true" />
-        <activity
-            android:name=".screen.NextActivity"
-            android:exported="true" />
-        <activity
-            android:name=".screen.WelcomeActivity"
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
