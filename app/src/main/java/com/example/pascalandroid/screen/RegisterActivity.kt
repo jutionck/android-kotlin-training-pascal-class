@@ -5,19 +5,23 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.example.pascalandroid.R
+import com.example.pascalandroid.databinding.ActivityRegisterBinding
 import kotlinx.android.synthetic.main.activity_register.*
 
 class RegisterActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityRegisterBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_register)
+        binding = ActivityRegisterBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        btn_register.setOnClickListener {
+        binding.btnRegister.setOnClickListener {
             Toast.makeText(this, "Register successfully!", Toast.LENGTH_LONG).show()
             finish()
         }
 
-        btn_login.setOnClickListener {
+        binding.btnLogin.setOnClickListener {
             finish()
         }
     }
