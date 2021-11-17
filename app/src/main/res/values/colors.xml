@@ -17,11 +17,4 @@
     <color name="primaryTextColor">#000000</color>
     <color name="secondaryTextColor">#000000</color>
 
-    <color name="pinkPastel">#f48fb1</color>
-    <color name="pinkPastelLight">#ffc1e3</color>
-    <color name="pinkPastelDark">#bf5f82</color>
-
-    <color name="pascalAppMainColor">#f9a826</color>
-    <color name="pascalAppBlack">#2f2e41</color>
-    <color name="pascalAppSliderColorSecondary">#eeeae3</color>
 </resources>
