@@ -16,13 +16,13 @@
         app:layout_constraintEnd_toEndOf="parent">
 
         <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/counter_fragment"
+            android:id="@+id/block_volume_fragment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"/>
 
         <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/counter_show_fragment"
+            android:id="@+id/block_volume_show_fragment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"/>

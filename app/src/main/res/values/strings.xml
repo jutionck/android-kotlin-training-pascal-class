@@ -17,4 +17,8 @@
     <string name="increment">+</string>
     <string name="decrement">-</string>
     <string name="counter">0</string>
+    <string name="length">Length</string>
+    <string name="width">Width</string>
+    <string name="height">Height</string>
+    <string name="calculate">Calculate</string>
 </resources>

@@ -6,13 +6,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.pascalandroid.MainActivity
-import com.example.pascalandroid.databinding.FragmentCounterBinding
+import com.example.pascalandroid.databinding.FragmentBlockVolumeBinding
 
-class CounterFragment : Fragment() {
+class BlockVolumeFragment : Fragment() {
 
-    private lateinit var mainActivity: MainActivity
-    private var _binding: FragmentCounterBinding? = null
+    private var _binding: FragmentBlockVolumeBinding? = null
     private val binding get() = _binding!!
+    private lateinit var mainActivity: MainActivity
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,24 +24,22 @@ class CounterFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         // Inflate the layout for this fragment
-        _binding = FragmentCounterBinding.inflate(inflater, container, false)
+        _binding =  FragmentBlockVolumeBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-//        binding.btnIncrement.setOnClickListener {
-//            mainActivity.notifyIncrease()
-//        }
-//
-//        binding.btnDecrement.setOnClickListener {
-//            mainActivity.notifyDecrease()
-//        }
+        binding.btnCalculate.setOnClickListener {
+            mainActivity.calculate()
+        }
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
-        _binding = null
+    fun calculateBlockVolume(): Double {
+        val length = binding.blockLength.text.toString()
+        val width = binding.blockWidth.text.toString()
+        val height = binding.blockHeight.text.toString()
+        return length.toDouble() * width.toDouble() * height.toDouble()
     }
 
 }
