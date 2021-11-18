@@ -42,7 +42,9 @@ class MessageFragment : Fragment() {
     }
 
     private fun sendMessage() {
-        val bundle = bundleOf(HomeActivity.MESSAGE to binding.teFullName.text.toString())
-        navController.navigate(R.id.action_messageFragment_to_homeFragment, bundle)
+//        val bundle = bundleOf(HomeActivity.MESSAGE to binding.teFullName.text.toString())
+//        navController.navigate(R.id.action_global_homeFragment, bundle)
+        navController.navigate(MessageFragmentDirections.actionMessageFragmentToHomeFragment(binding.teFullName.text.toString()))
+
     }
 }

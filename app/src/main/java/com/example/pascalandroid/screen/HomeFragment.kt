@@ -30,8 +30,7 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val getMessage = arguments?.getString(HomeActivity.MESSAGE)
-        Log.i("test", "getMessage: $getMessage")
-        binding.tvFullName.text = getMessage
+        val args = MessageFragmentArgs.fromBundle(requireArguments())
+        binding.tvFullName.text = args.passedMessage
     }
 }
