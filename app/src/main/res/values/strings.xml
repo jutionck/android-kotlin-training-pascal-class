@@ -12,4 +12,9 @@
     <string name="tic_tac_toe">Tic Tac Toe</string>
     <string name="player_turn">Player Turn</string>
     <string name="btn_quit">QUIT</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="increment">+</string>
+    <string name="decrement">-</string>
+    <string name="counter">0</string>
 </resources>
