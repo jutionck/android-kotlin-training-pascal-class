@@ -1,7 +1,8 @@
-package com.example.pascalandroid
+package com.example.pascalandroid.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.pascalandroid.R
 
 class SecondActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

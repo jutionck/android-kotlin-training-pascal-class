@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.example.pascalandroid.R
 import com.example.pascalandroid.databinding.FragmentGreetingBinding
 
@@ -30,17 +31,24 @@ class GreetingFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         fragmentMessage = MessageFragment()
-        binding.btnStart.setOnClickListener { switchFragment(fragmentMessage) }
+        binding.btnStart.setOnClickListener {
+            findNavController().navigate(R.id.action_greetingFragment_to_homeActivity)
+        }
     }
 
-    private fun switchFragment(fragment: Fragment) {
-        requireActivity()
-            .supportFragmentManager
-            .beginTransaction()
-            .replace(R.id.fragment_container, fragment)
-            .setReorderingAllowed(true)
-            .addToBackStack("welcome")
-            .commit()
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
     }
+
+//    private fun switchFragment(fragment: Fragment) {
+//        requireActivity()
+//            .supportFragmentManager
+//            .beginTransaction()
+//            .replace(R.id.fragment_container, fragment)
+//            .setReorderingAllowed(true)
+//            .addToBackStack("welcome")
+//            .commit()
+//    }
 
 }

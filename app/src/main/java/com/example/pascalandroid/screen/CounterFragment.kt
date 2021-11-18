@@ -5,7 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.pascalandroid.MainActivity
+import com.example.pascalandroid.activity.MainActivity
 import com.example.pascalandroid.databinding.FragmentCounterBinding
 
 class CounterFragment : Fragment() {

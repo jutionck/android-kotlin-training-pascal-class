@@ -5,7 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
 import com.example.pascalandroid.R
+import com.example.pascalandroid.activity.HomeActivity
 import com.example.pascalandroid.communicator.MessageCommunicator
 import com.example.pascalandroid.databinding.FragmentGreetingBinding
 import com.example.pascalandroid.databinding.FragmentMessageBinding
@@ -14,7 +18,7 @@ class MessageFragment : Fragment() {
 
     private var _binding: FragmentMessageBinding? = null
     private val binding get() = _binding!!
-    private lateinit var messageCommunicator: MessageCommunicator
+    private lateinit var navController: NavController
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,9 +35,14 @@ class MessageFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        messageCommunicator = activity as MessageCommunicator
+        navController = Navigation.findNavController(view)
         binding.btnSign.setOnClickListener {
-            messageCommunicator.sendMessage(binding.teFullName.text.toString())
+           sendMessage()
         }
+    }
+
+    private fun sendMessage() {
+        val bundle = bundleOf(HomeActivity.MESSAGE to binding.teFullName.text.toString())
+        navController.navigate(R.id.action_messageFragment_to_homeFragment, bundle)
     }
 }

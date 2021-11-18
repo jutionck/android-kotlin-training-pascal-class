@@ -1,15 +1,14 @@
 package com.example.pascalandroid.screen
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.pascalandroid.MainActivity
-import com.example.pascalandroid.R
-import com.example.pascalandroid.communicator.MessageCommunicator
+import com.example.pascalandroid.activity.HomeActivity
+import com.example.pascalandroid.activity.MainActivity
 import com.example.pascalandroid.databinding.FragmentHomeBinding
-import com.example.pascalandroid.databinding.FragmentMessageBinding
 
 class HomeFragment : Fragment() {
 
@@ -31,7 +30,8 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val getMessage = arguments?.getString(MainActivity.MESSAGE)
+        val getMessage = arguments?.getString(HomeActivity.MESSAGE)
+        Log.i("test", "getMessage: $getMessage")
         binding.tvFullName.text = getMessage
     }
 }

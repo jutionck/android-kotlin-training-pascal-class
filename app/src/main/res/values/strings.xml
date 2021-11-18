@@ -28,5 +28,15 @@
     <string name="masukan_nama_kamu">Masukan nama kamu</string>
     <string name="masukkan_nama_kamu">Masukkan nama kamu</string>
     <string name="masuk">Masuk</string>
-    <string name="selamat_datang_nama_kamu">Selamat Datang Nama Kamu</string>
+    <string name="selamat_datang_nama_kamu">Selamat datang</string>
+    <string name="nama_kamu">Jution Candra</string>
+    <string name="menu_aplikasi">Menu Aplikasi</string>
+    <string name="menu_image">Menu image</string>
+    <string name="increment_decrement">Counter</string>
+    <string name="adala_aplikasi_bla_bla">Adala aplikasi bla bla</string>
+    <string name="detail">Detail</string>
+    <string name="volume_balok">Volume Balok</string>
+    <string name="greeting">Greeting</string>
+    <string name="pascal_app">Pascal App</string>
+    <string name="by_enigma">by Enigma</string>
 </resources>
