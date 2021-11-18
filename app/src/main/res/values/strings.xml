@@ -21,4 +21,12 @@
     <string name="width">Width</string>
     <string name="height">Height</string>
     <string name="calculate">Calculate</string>
+    <string name="selamat_datang">Selamat Datang</string>
+    <string name="mulailah_dengan_semangat_dan_senyuman">Mulailah dengan semangat dan senyuman</string>
+    <string name="mulai">MULAI</string>
+    <string name="pascal_app_by_enigma">Pascal App by Enigma</string>
+    <string name="masukan_nama_kamu">Masukan nama kamu</string>
+    <string name="masukkan_nama_kamu">Masukkan nama kamu</string>
+    <string name="masuk">Masuk</string>
+    <string name="selamat_datang_nama_kamu">Selamat Datang Nama Kamu</string>
 </resources>
