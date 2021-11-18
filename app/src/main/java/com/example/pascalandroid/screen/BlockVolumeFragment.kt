@@ -6,17 +6,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.pascalandroid.MainActivity
+import com.example.pascalandroid.communicator.BlockVolumeCommunicator
 import com.example.pascalandroid.databinding.FragmentBlockVolumeBinding
 
 class BlockVolumeFragment : Fragment() {
 
     private var _binding: FragmentBlockVolumeBinding? = null
     private val binding get() = _binding!!
-    private lateinit var mainActivity: MainActivity
+    private lateinit var blockVolumeCommunicator: BlockVolumeCommunicator
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        mainActivity = activity as MainActivity
+        blockVolumeCommunicator = activity as BlockVolumeCommunicator
     }
 
     override fun onCreateView(
@@ -31,7 +32,7 @@ class BlockVolumeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.btnCalculate.setOnClickListener {
-            mainActivity.calculate()
+            blockVolumeCommunicator.calculate()
         }
     }
 

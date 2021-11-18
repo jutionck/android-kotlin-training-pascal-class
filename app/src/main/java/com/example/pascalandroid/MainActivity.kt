@@ -3,13 +3,14 @@ package com.example.pascalandroid
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import com.example.pascalandroid.communicator.BlockVolumeCommunicator
 import com.example.pascalandroid.databinding.ActivityMainBinding
 import com.example.pascalandroid.screen.BlockVolumeFragment
 import com.example.pascalandroid.screen.BlockVolumeShowFragment
 import com.example.pascalandroid.screen.CounterFragment
 import com.example.pascalandroid.screen.CounterShowFragment
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), BlockVolumeCommunicator {
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var fragmentBlockVolume: BlockVolumeFragment
@@ -33,7 +34,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun calculate() {
+    override fun calculate() {
         val result = fragmentBlockVolume.calculateBlockVolume()
         fragmentBlockVolumeShow.getCalculateBlockVolume(result)
     }
