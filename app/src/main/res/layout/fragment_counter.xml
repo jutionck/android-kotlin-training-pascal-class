@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/seaBlueColor"
-    tools:context=".screen.CounterFragment">
+    tools:context=".demo.screen.CounterFragment">
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_increment"

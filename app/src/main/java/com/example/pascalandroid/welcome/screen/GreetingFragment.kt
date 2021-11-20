@@ -1,22 +1,21 @@
-package com.example.pascalandroid.screen
+package com.example.pascalandroid.welcome.screen
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.pascalandroid.MainActivity
-import com.example.pascalandroid.databinding.FragmentCounterBinding
+import androidx.navigation.fragment.findNavController
+import com.example.pascalandroid.R
+import com.example.pascalandroid.databinding.FragmentGreetingBinding
 
-class CounterFragment : Fragment() {
+class GreetingFragment : Fragment() {
 
-    private lateinit var mainActivity: MainActivity
-    private var _binding: FragmentCounterBinding? = null
+    private var _binding: FragmentGreetingBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        mainActivity = activity as MainActivity
     }
 
     override fun onCreateView(
@@ -24,19 +23,15 @@ class CounterFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         // Inflate the layout for this fragment
-        _binding = FragmentCounterBinding.inflate(inflater, container, false)
+        _binding =  FragmentGreetingBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-//        binding.btnIncrement.setOnClickListener {
-//            mainActivity.notifyIncrease()
-//        }
-//
-//        binding.btnDecrement.setOnClickListener {
-//            mainActivity.notifyDecrease()
-//        }
+        binding.btnStart.setOnClickListener {
+            findNavController().navigate(R.id.action_global_greetingFragment)
+        }
     }
 
     override fun onDestroy() {

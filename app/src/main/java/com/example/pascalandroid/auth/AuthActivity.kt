@@ -1,11 +1,12 @@
-package com.example.pascalandroid
+package com.example.pascalandroid.auth
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.pascalandroid.R
 
-class SecondActivity : AppCompatActivity() {
+class AuthActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_second)
+        setContentView(R.layout.activity_auth)
     }
 }

@@ -5,7 +5,7 @@
     android:id="@+id/frameLayout3"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".screen.BlockVolumeFragment">
+    tools:context=".demo.screen.BlockVolumeFragment">
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/block_length_field"

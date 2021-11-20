@@ -10,17 +10,30 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PascalAndroid">
         <activity
-            android:name=".SecondActivity"
+            android:name=".auth.AuthActivity"
             android:exported="true" />
         <activity
-            android:name=".MainActivity"
-            android:exported="true">
+            android:name=".demo.DemoActivity"
+            android:exported="true" />
+        <activity
+            android:name=".welcome.WelcomeActivity"
+            android:exported="true" />
+        <activity
+            android:name=".home.HomeActivity"
+            android:exported="true" />
+        <activity
+            android:name=".SplashActivity"
+            android:exported="true"
+            android:theme="@style/SplashScreenStyle">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="true" />
     </application>
 
 </manifest>

@@ -1,11 +1,10 @@
-package com.example.pascalandroid.screen
+package com.example.pascalandroid.demo.screen
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.pascalandroid.MainActivity
 import com.example.pascalandroid.communicator.BlockVolumeCommunicator
 import com.example.pascalandroid.databinding.FragmentBlockVolumeBinding
 
