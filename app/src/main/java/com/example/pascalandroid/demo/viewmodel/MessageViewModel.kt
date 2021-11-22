@@ -1,11 +1,13 @@
 package com.example.pascalandroid.demo.viewmodel
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 class MessageViewModel: ViewModel() {
 
-    var message = MutableLiveData<String>()
+    private val _message = MutableLiveData<String>()
+    val message: LiveData<String> get() = _message
 
     private val messageQuotes = listOf<String>(
         "Have nice day",
@@ -17,6 +19,6 @@ class MessageViewModel: ViewModel() {
     private val currentMessageQuote = messageQuotes[index]
 
     fun sendMessage(name: String) {
-        message.value = "Selamat Sore $name!\n $currentMessageQuote"
+        _message.value = "Selamat Sore $name!\n $currentMessageQuote"
     }
 }
