@@ -1,6 +1,7 @@
 package com.example.pascalandroid
 
 import android.util.Log
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 class CounterViewModel: ViewModel() {
@@ -9,9 +10,12 @@ class CounterViewModel: ViewModel() {
         Log.i("test", "CounterViewModel created")
     }
 
-    var counter = 0
+    var counter = MutableLiveData<Int>()
+    private var _counter = 0
     fun notifyIncrease() {
-        counter++
+        _counter++
+        counter.value = _counter
+        Log.i("test", "notifyIncrease: ${counter.value}")
     }
 
     // lifecycle ViewModels

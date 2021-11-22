@@ -20,11 +20,10 @@ class MainActivity : AppCompatActivity() {
 
         // 2. ViewModelProviders
         counterViewModel = ViewModelProvider(this)[CounterViewModel::class.java]
+        subscribe()
         binding.apply {
-            tvCounter.text = counterViewModel.counter.toString()
             btnIncrement.setOnClickListener {
                 counterViewModel.notifyIncrease()
-                tvCounter.text = counterViewModel.counter.toString()
             }
         }
 
@@ -36,5 +35,11 @@ class MainActivity : AppCompatActivity() {
          * 4. Livedata -> observe
          * 5. View -> dia akan mesubscribe apa yang di sediakan oleh si livedata
          */
+    }
+
+    private fun subscribe() {
+        counterViewModel.counter.observe(this, {
+            binding.tvCounter.text = it.toString()
+        })
     }
 }
