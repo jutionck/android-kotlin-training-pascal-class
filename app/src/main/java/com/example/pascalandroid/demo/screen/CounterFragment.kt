@@ -5,13 +5,15 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.pascalandroid.MainActivity
+import androidx.lifecycle.ViewModelProvider
 import com.example.pascalandroid.databinding.FragmentCounterBinding
+import com.example.pascalandroid.demo.viewmodel.CounterViewModel
 
 class CounterFragment : Fragment() {
 
     private var _binding: FragmentCounterBinding? = null
     private val binding get() = _binding!!
+    private lateinit var counterViewModel: CounterViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,13 +30,16 @@ class CounterFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-//        binding.btnIncrement.setOnClickListener {
-//            mainActivity.notifyIncrease()
-//        }
-//
-//        binding.btnDecrement.setOnClickListener {
-//            mainActivity.notifyDecrease()
-//        }
+        counterViewModel = ViewModelProvider(requireActivity())[CounterViewModel::class.java]
+        binding.apply {
+            btnIncrement.setOnClickListener {
+                counterViewModel.notifyIncrease()
+            }
+
+            btnDecrement.setOnClickListener {
+                counterViewModel.notifyDecrease()
+            }
+        }
     }
 
     override fun onDestroy() {

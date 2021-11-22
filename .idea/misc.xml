@@ -13,6 +13,7 @@
         <entry key="app/src/main/res/drawable/ic_pascal_image.xml" value="0.12129629629629629" />
         <entry key="app/src/main/res/layout/activity_auth.xml" value="0.29583333333333334" />
         <entry key="app/src/main/res/layout/activity_counter.xml" value="0.23333333333333334" />
+        <entry key="app/src/main/res/layout/activity_greeting.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.165" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.165" />
@@ -29,6 +30,8 @@
         <entry key="app/src/main/res/layout/fragment_login.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/fragment_message.xml" value="0.22870370370370371" />
         <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.25796178343949044" />
+        <entry key="app/src/main/res/layout/fragment_quote_show.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/fragment_quotes.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_register.xml" value="0.29583333333333334" />
         <entry key="app/src/main/res/layout/fragment_welcome.xml" value="0.2462962962962963" />
         <entry key="app/src/main/res/layout/fragment_welcome_two.xml" value="0.2462962962962963" />

@@ -5,7 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import com.example.pascalandroid.demo.viewmodel.MessageViewModel
 import com.example.pascalandroid.R
 import com.example.pascalandroid.databinding.FragmentMessageBinding
 

@@ -41,4 +41,6 @@
     <string name="home_nav">Home</string>
     <string name="profile_nav">Profile</string>
     <string name="profile">Profile</string>
+    <string name="send_quote">Send Quote</string>
+    <string name="selamat_sore">Selamat Sore</string>
 </resources>

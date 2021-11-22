@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PascalAndroid">
         <activity
+            android:name=".demo.GreetingActivity"
+            android:exported="true" />
+        <activity
             android:name=".demo.CounterActivity"
             android:exported="true" />
         <activity
