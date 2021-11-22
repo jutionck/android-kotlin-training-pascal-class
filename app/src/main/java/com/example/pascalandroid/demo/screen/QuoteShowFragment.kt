@@ -33,12 +33,17 @@ class QuoteShowFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         messageViewModel = ViewModelProvider(requireActivity())[MessageViewModel::class.java]
-        subscribe()
+        // Using dataBinding to bind data directly to the views in XML
+        binding.quotesViewModel = messageViewModel
+        binding.lifecycleOwner = this
+
+        // Ini sudah tidak di pakai kembali karena sudah menggunakan dataBinding
+        //subscribe()
     }
 
-    private fun subscribe() {
-        messageViewModel.message.observe(viewLifecycleOwner, {
-            binding.tvQuote.text = it
-        })
-    }
+//    private fun subscribe() {
+//        messageViewModel.message.observe(viewLifecycleOwner, {
+//            binding.tvQuote.text = it
+//        })
+//    }
 }
