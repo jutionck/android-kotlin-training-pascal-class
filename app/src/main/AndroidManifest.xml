@@ -13,7 +13,7 @@
             android:name=".auth.AuthActivity"
             android:exported="true" />
         <activity
-            android:name=".demo.DemoActivity"
+            android:name=".demo.CounterActivity"
             android:exported="true" />
         <activity
             android:name=".welcome.WelcomeActivity"
