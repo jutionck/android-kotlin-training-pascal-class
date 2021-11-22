@@ -5,9 +5,18 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.pascalandroid.R
+import com.example.pascalandroid.databinding.FragmentProfileBinding
+import com.example.pascalandroid.home.adapter.ContactAdapter
 
 class ProfileFragment : Fragment() {
+
+    private var layoutManager: RecyclerView.LayoutManager? = null
+    private var adapter: RecyclerView.Adapter<ContactAdapter.ViewHolder>? = null
+
+    private lateinit var binding: FragmentProfileBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -16,8 +25,19 @@ class ProfileFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile, container, false)
+        binding = FragmentProfileBinding.inflate(layoutInflater, container, false)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        layoutManager = LinearLayoutManager(requireContext())
+        adapter = ContactAdapter()
+        binding.apply {
+            contactRecyclerview.layoutManager = layoutManager
+            contactRecyclerview.adapter = adapter
+        }
     }
 }

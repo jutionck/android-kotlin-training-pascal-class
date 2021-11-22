@@ -40,7 +40,10 @@
     <string name="greeting">Greeting</string>
     <string name="home_nav">Home</string>
     <string name="profile_nav">Profile</string>
+    <string name="contact_nav">Contact</string>
     <string name="profile">Profile</string>
     <string name="send_quote">Send Quote</string>
     <string name="selamat_sore">Selamat Sore</string>
+    <string name="daftar_kontak">Daftar Kontak</string>
+    <string name="contact_image_desc">Contact Image Desc</string>
 </resources>
