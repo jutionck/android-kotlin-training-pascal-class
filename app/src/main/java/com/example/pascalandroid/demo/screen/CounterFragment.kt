@@ -10,13 +10,11 @@ import com.example.pascalandroid.databinding.FragmentCounterBinding
 
 class CounterFragment : Fragment() {
 
-    private lateinit var mainActivity: MainActivity
     private var _binding: FragmentCounterBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        mainActivity = activity as MainActivity
     }
 
     override fun onCreateView(
