@@ -40,10 +40,13 @@
     <string name="greeting">Greeting</string>
     <string name="home_nav">Home</string>
     <string name="profile_nav">Profile</string>
+    <string name="contact_nav">Contact</string>
     <string name="profile">Profile</string>
+    <string name="contact_list">Daftar Kontak</string>
     <string name="send_quote">Send Quote</string>
     <string name="selamat_sore">Selamat Sore</string>
     <string name="bank_prompt">Choose a Bank</string>
+    <string name="image_contact">Image Contact</string>
     <string-array name="bank_arrays">
         <item name="bank_arrays">BCA</item>
         <item name="bank_arrays">Mandiri</item>

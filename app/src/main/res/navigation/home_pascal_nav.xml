@@ -16,11 +16,6 @@
             android:id="@+id/action_homeFragment_to_greetingActivity"
             app:destination="@id/greetingActivity" />
     </fragment>
-    <fragment
-        android:id="@+id/profileFragment"
-        android:name="com.example.pascalandroid.home.screen.ProfileFragment"
-        android:label="fragment_profile"
-        tools:layout="@layout/fragment_profile" />
     <activity
         android:id="@+id/counterActivity"
         android:name="com.example.pascalandroid.demo.CounterActivity"
@@ -31,4 +26,9 @@
         android:name="com.example.pascalandroid.demo.GreetingActivity"
         android:label="activity_greeting"
         tools:layout="@layout/activity_greeting" />
+    <fragment
+        android:id="@+id/contactFragment"
+        android:name="com.example.pascalandroid.home.screen.ContactFragment"
+        android:label="fragment_contact"
+        tools:layout="@layout/fragment_contact" />
 </navigation>
