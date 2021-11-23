@@ -21,4 +21,8 @@ class MessageViewModel: ViewModel() {
     fun sendMessage(name: String) {
         _message.value = "Selamat Sore $name!\n $currentMessageQuote"
     }
+
+    override fun onCleared() {
+        super.onCleared()
+    }
 }
