@@ -30,5 +30,18 @@
         android:id="@+id/contactFragment"
         android:name="com.example.pascalandroid.home.screen.ContactFragment"
         android:label="fragment_contact"
-        tools:layout="@layout/fragment_contact" />
+        tools:layout="@layout/fragment_contact" >
+        <action
+            android:id="@+id/action_contactFragment_to_formContactFragment"
+            app:destination="@id/formContactFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/formContactFragment"
+        android:name="com.example.pascalandroid.home.screen.FormContactFragment"
+        android:label="fragment_form_contact"
+        tools:layout="@layout/fragment_form_contact" >
+        <action
+            android:id="@+id/action_formContactFragment_to_contactFragment"
+            app:destination="@id/contactFragment" />
+    </fragment>
 </navigation>

@@ -8,36 +8,12 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.pascalandroid.R
+import com.example.pascalandroid.databinding.CardViewContactBinding
+import com.example.pascalandroid.home.model.ContactModel
 
 class ContactAdapter : RecyclerView.Adapter<ContactAdapter.ViewHolder>() {
 
-    private var contactName = arrayOf(
-        "JUTION CANDRA KIRANA",
-        "JOAN MAUPAUL",
-        "THOMAS MATINI",
-        "SISCA HOLD",
-        "SARAS NURDIN",
-        "ANTONIO CONTE"
-    )
-
-    private var contactJob = arrayOf(
-        "Android Developer",
-        "Backend Developer",
-        "Frontend Developer",
-        "QA Engineer",
-        "Android Developer",
-        "Android Developer"
-    )
-
-    private var contactImage = intArrayOf(
-        R.drawable.ic_account_circle,
-        R.drawable.ic_account_circle,
-        R.drawable.ic_account_circle,
-        R.drawable.ic_account_circle,
-        R.drawable.ic_account_circle,
-        R.drawable.ic_account_circle,
-    )
-
+    var contactsList = ArrayList<ContactModel>()
     // Hasil implement dari RecyclerView.Adapter
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ContactAdapter.ViewHolder {
         // Kita inject view yang sudah dibuat card_view_contact.xml di dalam sini
@@ -48,30 +24,39 @@ class ContactAdapter : RecyclerView.Adapter<ContactAdapter.ViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: ContactAdapter.ViewHolder, position: Int) {
-        holder.itemContactName.text = contactName[position]
-        holder.itemContactJob.text = contactJob[position]
-        holder.itemContactImage.setImageResource(contactImage[position])
+        holder.itemContactName.text = contactsList[position].name
+        holder.itemContactJob.text = contactsList[position].job
+        holder.itemContactImage.setImageResource(contactsList[position].contactImage)
     }
 
-    override fun getItemCount() = contactName.size
+    override fun getItemCount() = contactsList.size
 
     // Ini class buatan untuk ViewHolder
     // Ini dapat di pisahkan beda file jika mau
     inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
-        var itemContactName: TextView = itemView.findViewById(R.id.contact_name)
-        var itemContactJob: TextView = itemView.findViewById(R.id.contact_job)
-        var itemContactImage: ImageView = itemView.findViewById(R.id.contact_image)
+        val binding = CardViewContactBinding.bind(itemView)
+        var itemContactName: TextView = binding.contactName
+        var itemContactJob: TextView = binding.contactJob
+        var itemContactImage: ImageView = binding.contactImage
 
         init {
-            itemView.setOnClickListener {
-                val position: Int = adapterPosition
-                Toast
-                    .makeText(
-                        itemView.context,
-                        "${contactName[position]}",
-                        Toast.LENGTH_LONG)
-                    .show()
+            binding.apply {
+                contactDelete.setOnClickListener {
+                    val position: Int = adapterPosition
+                    Toast
+                        .makeText(
+                            itemView.context,
+                            contactsList[position].name,
+                            Toast.LENGTH_LONG)
+                        .show()
+                }
             }
         }
+    }
+
+    fun setContact(newContact: List<ContactModel>) {
+        contactsList.clear()
+        contactsList.addAll(newContact)
+        notifyDataSetChanged()
     }
 }

@@ -27,7 +27,7 @@
 
         <TextView
             android:id="@+id/contact_name"
-            android:layout_width="280dp"
+            android:layout_width="240dp"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toEndOf="@+id/contact_image"
@@ -38,13 +38,23 @@
 
         <TextView
             android:id="@+id/contact_job"
-            android:layout_width="280dp"
+            android:layout_width="240dp"
             android:layout_height="wrap_content"
             app:layout_constraintStart_toEndOf="@+id/contact_image"
             app:layout_constraintTop_toBottomOf="@+id/contact_name"
             android:layout_marginStart="16dp"
             android:layout_marginTop="5dp"
             android:textSize="12sp"/>
+
+        <ImageView
+            android:id="@+id/contact_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_delete_forever"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="10dp"
+            android:contentDescription="@string/delete_icon_contact"/>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
