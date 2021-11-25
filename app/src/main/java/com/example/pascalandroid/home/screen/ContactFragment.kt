@@ -37,8 +37,9 @@ class ContactFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        initViewModel()
         binding.apply {
-            cAdapter = ContactAdapter()
+            cAdapter = ContactAdapter(contactViewModel)
             addContact.setOnClickListener {
                 findNavController().navigate(R.id.action_contactFragment_to_formContactFragment)
             }
@@ -47,7 +48,6 @@ class ContactFragment : Fragment() {
                 adapter = cAdapter
             }
         }
-        initViewModel()
         subscribe()
     }
 
@@ -60,6 +60,4 @@ class ContactFragment : Fragment() {
             cAdapter.setContact(it)
         })
     }
-
-
 }

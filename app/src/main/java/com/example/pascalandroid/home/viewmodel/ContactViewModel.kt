@@ -4,9 +4,10 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.pascalandroid.R
+import com.example.pascalandroid.home.adapter.ContactListener
 import com.example.pascalandroid.home.model.ContactModel
 
-class ContactViewModel : ViewModel() {
+class ContactViewModel : ViewModel(), ContactListener {
 
     private var _contactLiveData = MutableLiveData<List<ContactModel>>()
     val contactLiveData: LiveData<List<ContactModel>> get() = _contactLiveData
@@ -28,10 +29,9 @@ class ContactViewModel : ViewModel() {
         _contactLiveData.value = contacts
     }
 
-    fun removeContact(contact: ContactModel) {
+    override fun onDelete(contact: ContactModel) {
         val contactIndex = contacts.indexOf(contact)
         contacts.removeAt(contactIndex)
         _contactLiveData.value = contacts
     }
-
 }

@@ -56,5 +56,4 @@ class FormContactFragment : Fragment() {
             binding.teContactJob.text.toString(),
             R.drawable.ic_account_circle)
     }
-
 }
